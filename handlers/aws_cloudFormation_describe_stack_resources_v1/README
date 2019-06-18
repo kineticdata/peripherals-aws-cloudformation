@@ -1,0 +1,18 @@
+== AWS Cloud Formation Describe Stack Resources
+    This handler describes the stack resources of an AWS Cloud Formation Stack.
+
+=== Parameters
+    [Stack Name]
+        The name or the unique identifier associated with the stack.
+
+=== Results
+    [Resource List]
+      The results from this handler will return a resource list.
+
+==== Sample Configuration
+    Stack Name:                     DevStack01
+
+=== Detailed Description
+    This handler uses the AWS REST API to describe the stack resource of an
+    AWS Cloud Formation Stack. For more information see the AWS Amazon Virtual Private Cloud
+    User Guide online.

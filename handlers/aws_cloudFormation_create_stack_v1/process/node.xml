@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_cloudFormation_create_stack" name="AWS Cloud Formation Create Stack" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Creates a new stack using an Aws cloud formation template</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>true</deferrable>
+    <parameters>
+        <parameter id="template_url" label="Template URL" required="false"
+            tooltip="Enter a Template Body OR a Template URL. Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack." />
+        <parameter id="template_parameters" label="Template Parameters" required="false"
+            tooltip="Enter Template Parameters in JSON format." />
+        <parameter id="stack_name" label="Stack Name" required="true"
+            tooltip="Name of the cloud formation stack to create."/>
+    </parameters>
+    <handler name="aws_cloudFormation_create_stack" version="1">
+        <infos>
+            <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+            <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+            <info name="region">&lt;%= @info['region'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='Template URL'>&lt;%= @parameters['template_url'] %&gt;</parameter>
+            <parameter name='Template Parameters'>&lt;%= @parameters['template_parameters'] %&gt;</parameter>
+            <parameter name='Stack Name'>&lt;%= @parameters['stack_name'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Stack ID"/>
+    </results>
+</taskDefinition>

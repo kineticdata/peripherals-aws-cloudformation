@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_cloudFormation_estimate_template_cost" name="AWS Cloud Formation Estimate Template Cost" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Estimates cost of an Aws cloud formation template</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="template_url" label="Template URL" required="false"
+            tooltip="Enter a Template Body OR a Template URL." />
+        <parameter id="template_parameters" label="Template Parameters" required="true" tooltip="Template Parameters"/>
+    </parameters>
+    <handler name="aws_cloudFormation_estimate_template_cost" version="1">
+        <infos>
+          <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+          <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+          <info name="region">&lt;%= @info['region'] %&gt;</info>
+          <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='template_url'>&lt;%= @parameters['template_url'] %&gt;</parameter>
+            <parameter name='template_parameters'>&lt;%= @parameters['template_parameters'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="URL"/>
+    </results>
+</taskDefinition>

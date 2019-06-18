@@ -1,0 +1,23 @@
+== AWS Cloud Formation Estimate Template Cost
+    This handler is used to estimate the cost of an AWS cloud formation template.
+
+=== Parameters
+    [Template URL]
+        Enter a Template Body OR a Template URL. Location of file containing the
+        template body. The URL must point to a template located in an S3 bucket
+        in the same region as the stack.
+    [Template Parameters]
+        Template Parameters.
+
+=== Results
+    [URL]
+      The URL of the cloudFormation estimate template cost.
+
+==== Sample Configuration
+    Template URL:                   https://s3-us-west-1.amazonaws.com/cloudformation-templates-us-west-1/Rails_Multi_AZ.template
+    Template Parameters:            {"KeyName":"KineticDemoAWSWest","MultiAZDatabase":"true","SSHLocation":"0.0.0.0/0","WebServerCapacity":"2","DBAllocatedStorage":"5","DBInstanceClass":"db.m1.large","DBName":"myDatabase","DBPassword":"KineticDemo123","DBUser":"kineticdemo","InstanceType":"t2.small"}
+
+=== Detailed Description
+    This handler uses the AWS REST API to estimate the cost of an AWS cloud
+    formation template.  For more information see the AWS Amazon Virtual Private
+    Cloud User Guide online.

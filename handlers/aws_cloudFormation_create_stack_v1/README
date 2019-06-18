@@ -1,0 +1,25 @@
+== AWS Cloud Formation Create Stack
+    This handler is used to create a new cloud formation stack
+
+=== Parameters
+    [Template URL]
+        Enter a Template Body OR a Template URL. Location of file containing the
+        template body. The URL must point to a template located in an S3 bucket
+        in the same region as the stack.
+    [Template Parameters]
+        Enter Template Parameters in JSON format
+    [Stack Name]
+        Name of the cloud formation stack to create
+
+=== Results
+    [Stack ID]
+      ID of the cloud formation Stack that was created
+
+==== Sample Configuration
+    Template URL:             https://s3-us-west-2.amazonaws.com/cloudformation-templates-us-west-1/LAMP_Multi_AZ.template
+    Template Parameters:      {"KeyName":"KineticDemoAWSWest"}
+    Stack Name:               JamesTestLampStack
+
+=== Detailed Description
+    This handler uses the AWS REST API to create a new cloud formation stack
+    based on a template url.
