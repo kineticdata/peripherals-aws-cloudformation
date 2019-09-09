@@ -1,8 +1,9 @@
 ---
 repo-name: peripherals-aws-cloudformation
 categories:
-- Cloud
-- DevOps
-- Automation
+  - Cloud
+  - DevOps
+  - Automation
 display-name: Amazon CloudFormation
-manufacture: Amazon
+manufacturer: Amazon
+description: AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.
